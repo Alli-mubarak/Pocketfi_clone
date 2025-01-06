@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pocketfi</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-family: monospace;
+        }
+        .container{
+            margin: 100px auto;
+            height: 200px;
+            width: 200px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgb(91, 151, 194);
+            background: radial-gradient(rgb(149, 149, 182),white,grey);
+        }
+        .container::before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: red;
+            border-radius: 50%;
+            top: -50%;
+            left: -50%;
+        }
+        .container::after{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: blue;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+        }
+        .inner{
+            position: absolute;
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            left: 35px;
+            top: 35px;
+            z-index: 100;
+            animation: orbit 3s linear infinite;
+        
+        }
+        .middle{
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            left: 65px;
+            top: 65px;
+            border: 50%;
+            background: linear-gradient(rgb(118, 118, 168),white);
+            z-index: 300;
+            border-radius: 50%;
+            animation: backwind 3s infinite linear;
+        }
+        .inner div{
+            position: absolute;
+            border-radius: 50%;
+            height: 20px;
+            width: 20px;
+            z-index: 200;
+        }
+        .first{
+            background:blue;
+            top: 20px;
+            left: 0;
+        }
+        .second{
+            background:blue;
+            top: -10px;
+            left: 42%;
+        }
+        .third{
+            background:blue;
+            top: 20px;
+            left: 110px;
+        }
+        .fourth{
+            background:red;
+            top: 80px;
+            left:-5px;
+        }
+        .fifth{
+            background:red;
+            top: 120px;
+            left:42%;
+        }
+        .sixth{
+            background:red;
+            top: 85px;
+            left: 115px;
+        }
+        @keyframes orbit{
+            to{
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes backwind{
+            to{
+                transform: rotate(-360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>PocketFi clone</h1>
+        <div class="container">
+            <div class="middle"></div>
+            <div class="inner">
+                <div class="first"></div>
+                <div class="second"></div>
+                <div class="third"></div>
+                <div class="fourth"></div>
+                <div class="fifth"></div>
+                <div class="sixth"></div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
